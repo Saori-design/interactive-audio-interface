@@ -33,7 +33,7 @@ function playSong() {
 	playBtn.querySelector('p.fas').classList.remove('fa-play');
 	playBtn.querySelector('p.fas').classList.add('fa-pause');
 	// alert("src=" + playSong);
-	audio.play();
+	// audio.play();
 }
 
 //Pause song
@@ -42,7 +42,7 @@ let pauseSong = function() {
 	playBtn.querySelector('p.fas').classList.add('fa-play');
 	playBtn.querySelector('p.fas').classList.remove('fa-pause');
 	// alert("src=" + playSong);
-	audio.pause();
+	// audio.pause();
 }
 
 
@@ -57,6 +57,8 @@ let prevSong = function (){
 	}
 
 	loadSong(songs[songIndex]);
+
+	playSong();
 }
 
 //Next Song 
@@ -67,6 +69,8 @@ let nextSong = function (){
 	songIndex = 0;
 	}
 	loadSong(songs[songIndex]);
+
+	//playSong();
 }
 
 //play song
