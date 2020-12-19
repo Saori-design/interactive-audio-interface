@@ -1,0 +1,108 @@
+body {
+    background: rgb(255,229,254);
+    background: linear-gradient(0deg, rgba(255,229,254,1) 17%, rgba(249,216,221,1) 56%, rgba(255,255,196,0.8097982708933718) 100%);
+    height: 100vh;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10 px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.music-container {
+    background-color: #f9fad3;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgba(187, 111, 111, 0.6);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 10px 0;
+    z-index: 10;
+    height: 200px;
+}
+
+.img-container {
+    position: relative;
+    width: 110px;
+}
+
+
+.img-container img{
+    border-radius: 50%;
+    object-fit: fill;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+
+
+/* animation title pop up*/
+    animation: rotate 3s linear infinite;
+
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+
+/* cover img animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.navigation {
+    display: flex;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn {
+    background-color: #f9fad3;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.action-btn-big {
+    border: none;
+    font-size: 50px;
+}
+
+
+.music-info {
+    background-color: rgba(156, 156, 156, 0.171);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% 40px);
+    padding: 10px 150px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: auto;
+}
+
+.music-container.play .music-info {
+    opacity: 1;
+    transform: translateY(-100%)
+}
+
+.music-info h5 {
+    margin: 0;
+}

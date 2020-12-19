@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css">
+		<title>Interactive Audio Interface</title>
+	</head>
+    <body>
+		<div class="music-container" id="music-container">
+			<div class="music-info">
+				<h5 id="title"></h5>
+				<div class="title-container" id="title-container">
+				</div>
+			</div>
+
+			<audio src="audio/creativeminds.mp3" id="audio"></audio>
+
+			<div class="img-container">
+				<img src="img/creativeminds.jpg" alt="music-cover" id="cover">
+			</div>
+
+			<div class="navigation">
+				<button id="prev" class="action-btn">
+					<p class="fas fa-backward">⏪</p>
+				</button>
+				<button id="play" class="action-btn action-btn-big">
+					<p class="fas fa-play">⏯</p> 
+				</button>
+				<button id="next" class="action-btn">
+					<p class="fas fa-forward">⏩</p>
+				</button>
+			</div>
+
+		</div>
+        <script src="js/script.js"></script>
+    </body>
