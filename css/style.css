@@ -109,3 +109,18 @@ h1 {
 .music-info h3 {
     margin: 0;
 }
+
+#playlist {
+    margin-top: 20px;
+    background-color: #FFF;
+    text-align: left;
+    width: 400px;
+}
+
+#playlist div {
+    padding: 4px;
+    background-color: #f9fad3;
+    border-color: #999;
+    border-style: solid;
+    border-width: 1px;
+}

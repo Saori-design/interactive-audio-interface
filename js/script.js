@@ -8,11 +8,17 @@ let title = document.getElementById('title');
 let cover = document.getElementById('cover');
 
 //song titles array
-const SONGS = ['creative-minds', 'dance', 'funday', 'once-again', 'punky'];
-const LAST_SONG_INDEX = SONGS.length - 1;
+const SONG_LIST = [
+	{'file':'creative-minds','title':'Creative Minds'},
+	{'file':'dance', 'title':'Dance'},
+	{'file':'funday', 'title':'Funday'},
+	{'file':'once-again', 'title':'Once Again'},
+	{'file':'punky', 'title':'Punky'}
+];
+const LAST_SONG_INDEX = SONG_LIST.length - 1;
 
 // current index of song
-let songIndex = 0;
+let currentSongIndex = 0;
 
 let playSong = function () {
 	musicContainer.classList.add('play');
@@ -29,29 +35,48 @@ let pauseSong = function () {
 };
 
 let prevSong = function () {
-	songIndex--;
-	if (songIndex < 0) {
-		songIndex = LAST_SONG_INDEX;
+	currentSongIndex--;
+	if (currentSongIndex < 0) {
+		currentSongIndex = LAST_SONG_INDEX;
 	}
 
-	loadSong(SONGS[songIndex]);
-	playSong();
+	loadSong(currentSongIndex, true);
 };
 
 let nextSong = function () {
-	songIndex++;
-	if (songIndex > LAST_SONG_INDEX) {
-		songIndex = 0;
+	currentSongIndex++;
+	if (currentSongIndex > LAST_SONG_INDEX) {
+		currentSongIndex = 0;
 	}
 
-	loadSong(SONGS[songIndex]);
-	playSong();
+	loadSong(currentSongIndex, true);
 };
 
-function loadSong(song) {
-	title.innerText = song;
-	audio.src = `./audio/${song}.mp3`;
-	cover.src = `./img/${song}.jpg`;
+function loadSong(index, autoplay) {
+	title.innerText = SONG_LIST[index].title;
+	audio.src = `./audio/${SONG_LIST[index].file}.mp3`;
+	cover.src = `./img/${SONG_LIST[index].file}.jpg`;
+
+	if (autoplay) {
+		playSong();
+	}
+}
+
+function createPlaylist() {
+	let playlist = document.getElementById('playlist');
+
+	let i;
+	for (i = 0; i <= LAST_SONG_INDEX; i++) {
+		let div = document.createElement('div');
+		let text = document.createTextNode("⏯ " + SONG_LIST[i].title);
+		let index = i;
+		div.addEventListener('click', () => {
+			currentSongIndex = index;
+			loadSong(index, true);
+		});
+		div.appendChild(text);
+		playlist.appendChild(div);
+	}
 }
 
 // Click Listeners
@@ -71,5 +96,6 @@ nextBtn.addEventListener('click',nextSong);
 // Song end
 audio.addEventListener('ended', nextSong);
 
+createPlaylist();
 // Load song details into DOM when document loads
-loadSong(SONGS[songIndex]);
+loadSong(0, false);
