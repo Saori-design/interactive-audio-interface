@@ -8,7 +8,7 @@ let title = document.getElementById('title');
 let cover = document.getElementById('cover');
 
 //song titles array
-const SONGS = ['creative_minds', 'dance', 'funday', 'once_again', 'punky'];
+const SONGS = ['creative-minds', 'dance', 'funday', 'once-again', 'punky'];
 const LAST_SONG_INDEX = SONGS.length - 1;
 
 // current index of song
