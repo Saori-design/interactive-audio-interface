@@ -33,6 +33,7 @@ h1 {
 .img-container {
     position: relative;
     width: 110px;
+    padding: 25px;
 }
 
 .img-container img {
@@ -41,7 +42,6 @@ h1 {
     height: 110px;
     width: inherit;
     position: absolute;
-    bottom: 50px;
     left: 0;
 
     /* animation title pop up */
@@ -92,7 +92,8 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    width: calc(100% 40px);
+    text-align: center;
+    width: 100%;
     padding: 10px 150px 10px 150px;
     opacity: 0;
     transform: translateY(0%);
