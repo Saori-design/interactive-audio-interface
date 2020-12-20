@@ -10,9 +10,9 @@ let title = document.getElementById('title');
 let cover = document.getElementById('cover');
 
 //song titles array
-let songs = ['creativeminds', 'dance', 'funday', 'onceagain', 'punky'];
+let songs = ['creativeMinds', 'dance', 'funDay', 'onceAgain', 'punky'];
 
-//Keep track of song
+//track of song
 let songIndex = 0;
 
 //Load song details into DOM
@@ -30,8 +30,8 @@ function loadSong(song) {
 //Play song
 function playSong() {
 	musicContainer.classList.add('play');
-	playBtn.querySelector('p.fas').classList.remove('fa-play');
-	playBtn.querySelector('p.fas').classList.add('fa-pause');
+	playBtn.querySelector('i.fas').classList.remove('fa-play');
+	playBtn.querySelector('i.fas').classList.add('fa-pause');
 	// alert("src=" + playSong);
 	audio.play();
 }
@@ -39,8 +39,8 @@ function playSong() {
 //Pause song
 function pauseSong() {
 	musicContainer.classList.remove('play');
-	playBtn.querySelector('p.fas').classList.add('fa-play');
-	playBtn.querySelector('p.fas').classList.remove('fa-pause');
+	playBtn.querySelector('i.fas').classList.add('fa-play');
+	playBtn.querySelector('i.fas').classList.remove('fa-pause');
 	// alert("src=" + playSong);
 	audio.pause();
 }
@@ -73,7 +73,7 @@ let nextSong = function (){
 	//playSong();
 }
 
-//play song
+//Event listener
 playBtn.addEventListener('click', function() {
 	let isPlaying = musicContainer.classList.contains('play');
 	
