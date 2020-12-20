@@ -10,7 +10,7 @@ let title = document.getElementById('title');
 let cover = document.getElementById('cover');
 
 //song titles array
-let songs = ['creativeMinds', 'dance', 'funDay', 'onceAgain', 'punky'];
+let songs = ['creativeminds', 'dance', 'funday', 'onceagain', 'punky'];
 
 //track of song
 let songIndex = 0;
